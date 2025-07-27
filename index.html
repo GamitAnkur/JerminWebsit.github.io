@@ -1,257 +1,92 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Best Agri Export</title>
-  <style>
-  /* Reset & Base */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-family: Arial, sans-serif; line-height: 1.6; font-size: 16px; }
-  body { color: #333; }
-
-  img { max-width: 100%; height: auto; display: block; }
-
-  a { color: #0d6efd; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* Container Utility */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
-  }
-
-  /* Header & Nav */
-  header {
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  nav.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  nav ul li { display: inline; }
-  nav ul li a {
-    padding: 0.5rem;
-    transition: color 0.2s;
-  }
-
-  /* Hero */
-  .hero {
-    background: url('http://www.thebestagriexport.com/wp-content/uploads/2024/12/The-Best-Agri-Export-innovative-supply-chain.png') center/cover no-repeat;
-    color: #fff;
-    text-align: center;
-    padding: 6rem 1rem;
-  }
-  .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-  .hero p { font-size: 1.125rem; }
-
-  /* Grid utilities */
-  .grid { display: grid; gap: 2rem; }
-  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-
-  /* Cards */
-  .card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s;
-  }
-  .card:hover { transform: translateY(-4px); }
-  .card img { width: 100%; height: 160px; object-fit: cover; }
-  .card-content { padding: 1rem; flex: 1; }
-  .card-content h3 { margin-bottom: 0.5rem; font-size: 1.25rem; }
-  .card-content p { color: #555; font-size: 0.95rem; }
-
-  /* Sections */
-  section h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    color: #222;
-  }
-
-  /* Certifications */
-  .certs img {
-    filter: grayscale(100%);
-    opacity: 0.8;
-    transition: filter 0.2s, opacity 0.2s;
-  }
-  .certs img:hover {
-    filter: none;
-    opacity: 1;
-  }
-
-  /* Form */
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1rem;
-  }
-  form input,
-  form textarea {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.75rem;
-    font-size: 1rem;
-  }
-  form button {
-    background: #0d6efd;
-    color: #fff;
-    border: none;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  form button:hover {
-    background: #0b5ed7;
-  }
-
-  /* Footer */
-  footer {
-    background: #f8f9fa;
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.9rem;
-    color: #666;
-  }
-
-  /* Responsive tweaks */
-  @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .hero p { font-size: 1rem; }
-    nav ul { flex-direction: column; background: #fff; position: absolute; top: 100%; right: 1rem; padding: 1rem; border: 1px solid #ddd; display: none; }
-    nav ul.show { display: flex; }
-    .mobile-toggle {
-      display: block;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-  }
-  @media (min-width: 769px) {
-    .mobile-toggle { display: none; }
-  }
-</style>
-
-<script>
-  // Mobile nav toggle
-  document.addEventListener('DOMContentLoaded', function(){
-    const toggle = document.querySelector('.mobile-toggle');
-    const menu = document.querySelector('nav ul');
-    toggle && toggle.addEventListener('click', ()=> menu.classList.toggle('show'));
-  });
-</script>
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Header & Nav -->
-  <header>
-    <nav class="container">
-      <a href="#">Home</a>
-      <a href="#products">Products</a>
-      <a href="#about">About Us</a>
-      <a href="#certs">Certifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Best Agri Export</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section (using your supply-chain image) -->
-  <section class="hero"
-           style="background:url('http://www.thebestagriexport.com/wp-content/uploads/2024/12/The-Best-Agri-Export-innovative-supply-chain.png') center/cover no-repeat;">
-    <h1>The Best Agri Export</h1>
-    <p>Premium Vegetables | Fresh Fruits | Basmati Rice</p>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h2>Premium Vegetables · Fresh Fruits · Basmati Rice</h2>
+      <p>Supplying the world with farm-fresh produce direct from Gujarat.</p>
+      <a href="#products" class="btn">Our Products</a>
+    </div>
   </section>
 
   <!-- Products -->
-  <section id="products" class="container">
+  <section id="products" class="products container">
     <h2>Our Products</h2>
     <div class="grid grid-3">
-      <!-- Vegetable (replace with real URL from your site) -->
       <div class="card">
-        <img src="http://www.thebestagriexport.com/wp-content/uploads/2024/10/your-veg-image.jpg"
-             alt="Vegetables">
-        <div class="card-content">
-          <h3>Vegetables</h3>
-          <p>Fresh seasonal vegetables—beans, peppers, tomatoes, and more. HS Code: 0709</p>
-        </div>
+        <img src="images/img1.jpg" alt="Vegetables">
+        <h3>Vegetables</h3>
+        <p>Beans, peppers, tomatoes & more. HS: 0709</p>
       </div>
-      <!-- Fruits (replace with real URL from your site) -->
       <div class="card">
-        <img src="http://www.thebestagriexport.com/wp-content/uploads/2024/10/your-fruit-image.jpg"
-             alt="Fruits">
-        <div class="card-content">
-          <h3>Fruits</h3>
-          <p>Tropical fruits—mangoes, pineapples, bananas. HS Code: 0804</p>
-        </div>
+        <img src="images/img5.jpg" alt="Fruits">
+        <h3>Fruits</h3>
+        <p>Mangoes, pineapples, bananas. HS: 0804</p>
       </div>
-      <!-- Rice (replace with real URL from your site) -->
       <div class="card">
-        <img src="http://www.thebestagriexport.com/wp-content/uploads/2024/10/your-rice-image.jpg"
-             alt="Rice">
-        <div class="card-content">
-          <h3>Basmati Rice</h3>
-          <p>Premium aged Basmati rice with exceptional aroma. HS Code: 1006</p>
-        </div>
+        <img src="images/img9.jpg" alt="Basmati Rice">
+        <h3>Basmati Rice</h3>
+        <p>Aged aromatic rice. HS: 1006</p>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="container about">
+  <section id="about" class="about container">
     <h2>About Us</h2>
-    <p>We’re a Rajkot-based exporter with a network of trusted farmers across Gujarat.  
-    Exporting over 1,000 MT/month of top-quality produce to Europe, the Middle East, and Asia.</p>
+    <p>Based in Rajkot, we partner with hundreds of farmers across Gujarat, exporting over 1,000 MT/month of top-quality produce to Europe, the Middle East, and Asia.</p>
   </section>
 
-  <!-- Certifications -->
-  <section id="certs" class="container certs">
-    <h2>Certifications</h2>
-    <div class="grid grid-3">
-      <img src="http://www.thebestagriexport.com/wp-content/uploads/2024/10/logo-1.png" alt="Our Logo">
-      <img src="http://www.thebestagriexport.com/wp-content/uploads/2024/10/HACCP-logo.png" alt="HACCP">
-      <img src="http://www.thebestagriexport.com/wp-content/uploads/2024/10/FSSAI-logo.png" alt="FSSAI">
-      <img src="http://www.thebestagriexport.com/wp-content/uploads/2024/10/ISO22000-logo.png" alt="ISO 22000">
-    </div>
-  </section>
-
-  <!-- Contact / RFQ Form -->
-  <section id="contact" class="container">
+  <!-- Contact/Form -->
+  <section id="contact" class="contact container">
     <h2>Request a Quote</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <!-- … form fields … -->
-      <button type="submit">Submit RFQ</button>
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Email Address" required>
+      <input type="text" name="product" placeholder="Product (e.g. Basmati Rice)" required>
+      <input type="text" name="quantity" placeholder="Quantity (MT)" required>
+      <button type="submit">Submit</button>
     </form>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 The Best Agri Export – All Rights Reserved</p>
-    <p>Email: <a href="mailto:thebestagriexport@gmail.com">thebestagriexport@gmail.com</a> |
-       Phone: +91 9328100532</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Best Agri Export</p>
+      <p>Email: <a href="mailto:thebestagriexport@gmail.com">thebestagriexport@gmail.com</a> · Phone: +91 93281 00532</p>
+    </div>
   </footer>
 
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    toggle.addEventListener('click', () => navList.classList.toggle('visible'));
+  </script>
 </body>
 </html>
