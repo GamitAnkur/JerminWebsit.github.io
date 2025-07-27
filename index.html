@@ -5,8 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Best Agri Export</title>
   <style>
-    /* … (same styles as before) … */
-  </style>
+  /* Reset & Base */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-family: Arial, sans-serif; line-height: 1.6; font-size: 16px; }
+  body { color: #333; }
+
+  img { max-width: 100%; height: auto; display: block; }
+
+  a { color: #0d6efd; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Container Utility */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  /* Header & Nav */
+  header {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li { display: inline; }
+  nav ul li a {
+    padding: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  /* Hero */
+  .hero {
+    background: url('http://www.thebestagriexport.com/wp-content/uploads/2024/12/The-Best-Agri-Export-innovative-supply-chain.png') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 6rem 1rem;
+  }
+  .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .hero p { font-size: 1.125rem; }
+
+  /* Grid utilities */
+  .grid { display: grid; gap: 2rem; }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+
+  /* Cards */
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .card img { width: 100%; height: 160px; object-fit: cover; }
+  .card-content { padding: 1rem; flex: 1; }
+  .card-content h3 { margin-bottom: 0.5rem; font-size: 1.25rem; }
+  .card-content p { color: #555; font-size: 0.95rem; }
+
+  /* Sections */
+  section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #222;
+  }
+
+  /* Certifications */
+  .certs img {
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: filter 0.2s, opacity 0.2s;
+  }
+  .certs img:hover {
+    filter: none;
+    opacity: 1;
+  }
+
+  /* Form */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  form input,
+  form textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  form button {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  form button:hover {
+    background: #0b5ed7;
+  }
+
+  /* Footer */
+  footer {
+    background: #f8f9fa;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    nav ul { flex-direction: column; background: #fff; position: absolute; top: 100%; right: 1rem; padding: 1rem; border: 1px solid #ddd; display: none; }
+    nav ul.show { display: flex; }
+    .mobile-toggle {
+      display: block;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+  @media (min-width: 769px) {
+    .mobile-toggle { display: none; }
+  }
+</style>
+
+<script>
+  // Mobile nav toggle
+  document.addEventListener('DOMContentLoaded', function(){
+    const toggle = document.querySelector('.mobile-toggle');
+    const menu = document.querySelector('nav ul');
+    toggle && toggle.addEventListener('click', ()=> menu.classList.toggle('show'));
+  });
+</script>
+
 </head>
 <body>
 
@@ -98,4 +255,3 @@
 
 </body>
 </html>
-  
